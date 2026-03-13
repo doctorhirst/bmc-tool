@@ -534,7 +534,7 @@ export default function App() {
   const activeIdx = BLOCK_ORDER.indexOf(active);
 
   const callClaude = async (system, user) => {
-    const res = await fetch("https://bmc-tool-54zhcdy7l-doctorhirsts-projects.vercel.app/api/claude", {
+    const res = await fetch("/api/claude", {
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1000, system, messages: [{ role: "user", content: user }] }),
     });
